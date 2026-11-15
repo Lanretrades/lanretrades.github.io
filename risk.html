@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Risk Management | LanreTrades</title>
+<meta name="description" content="Free position size calculator, drawdown recovery table and four risk rules from LanreTrades.">
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+<header><div class="wrap"><nav>
+ <a class="logo" href="index.html">LANRE<b>TRADES</b></a>
+ <div class="links"><a href="index.html#join">Community</a><a href="index.html#workbook">Workbook</a><a href="calculator.html">Calculator</a><a class="on" href="risk.html">Risk</a><a class="btn b1 sm" href="index.html#join">Join Free</a></div>
+</nav></div></header>
+<div class="orb" style="left:55%;top:-60px;width:700px;height:600px;background:rgba(255,46,136,.25)"></div>
+<div class="orb" style="left:-200px;top:500px;width:600px;height:500px;background:rgba(138,92,255,.25)"></div>
+<main><section style="padding-top:60px"><div class="wrap">
+ <div class="kick">Risk management</div>
+ <h1 style="font-size:clamp(40px,6vw,76px)">Protect the account.<br><span class="serif neon">Then</span> chase the profit.</h1>
+ <p class="lead">Every trader who lasts has one thing in common: they know exactly how much they can lose before they click buy.</p>
+
+ <div class="panel" id="risk">
+  <div class="box v">
+   <div class="sub" style="color:#b59bff">Position size calculator</div>
+   <div class="row2"><div class="field"><label for="r-bal">Account balance ($)</label><input id="r-bal" type="number" min="1" step="any" value="5000"></div><div class="field"><label for="r-pct">Risk per trade (%)</label><input id="r-pct" type="number" min="0.1" max="100" step="0.1" value="1"></div></div>
+   <div class="row2"><div class="field"><label for="r-ins">Instrument</label><select id="r-ins"><option value="XAUUSD">XAUUSD · Gold</option><option value="EURUSD">EURUSD</option><option value="GBPUSD">GBPUSD</option><option value="US30">US30</option><option value="NAS100">NAS100</option></select></div><div class="field"><label for="r-stop" id="r-stoplab">Stop distance</label><input id="r-stop" type="number" min="0" step="any" value="8"></div></div>
+   <div class="res"><small>Max risk on this trade</small><div style="font-size:30px;font-weight:800;margin:6px 0 18px" id="r-risk">$0</div><small>Position size</small><div class="v1 neon"><span id="r-lots">0.00</span> <span class="u">lots</span></div></div>
+   <p class="note" id="r-note"></p>
+  </div>
+  <div class="box">
+   <div class="sub" style="color:var(--gold)">Loss vs recovery</div>
+   <table><tr><th>Drawdown</th><th>Gain needed to recover</th></tr>
+    <tr><td>10%</td><td class="gd">11.1%</td></tr><tr><td>20%</td><td class="gd">25%</td></tr><tr><td>30%</td><td class="gd">42.9%</td></tr><tr><td>50%</td><td class="hot">100%</td></tr><tr><td>70%</td><td class="hot">233%</td></tr></table>
+   <div class="sub" style="color:var(--gold);margin-top:34px">10 losses in a row · what is left of <span id="r-sbal"></span></div>
+   <table><tr><th>Risk per trade</th><th>Balance left</th></tr><tbody id="streak"></tbody></table>
+  </div>
+ </div>
+
+ <div class="rules">
+  <div class="rule"><div class="n">01</div><h4>Risk 1 to 2% a trade</h4><p>Small enough that a losing streak never ends your account.</p></div>
+  <div class="rule"><div class="n">02</div><h4>Stop loss every time</h4><p>Decide where you are wrong before you enter, not after.</p></div>
+  <div class="rule"><div class="n">03</div><h4>Aim for 1:2 or better</h4><p>At 1:2 you only need to win about 1 in 3 trades to break even.</p></div>
+  <div class="rule"><div class="n">04</div><h4>Set a daily loss cap</h4><p>Hit it, close the charts, walk away. No revenge trades.</p></div>
+ </div>
+ <div style="margin-top:40px;display:flex;gap:16px;flex-wrap:wrap"><a class="btn b3" href="calculator.html">← Compound Calculator</a><a class="btn b1" href="index.html#join">Join the Community →</a></div>
+</div></section></main>
+<footer><div class="wrap"><a class="logo" href="index.html">LANRE<b>TRADES</b></a><div class="fs"><a data-social="instagram">Instagram</a><a data-social="tiktok">TikTok</a><a data-social="youtube">YouTube</a><a data-social="threads">Threads</a></div><div class="disc">Educational content only. Not financial advice. Trading involves risk of loss. Pip and point values vary by broker.</div></div></footer>
+<script src="js/config.js"></script><script src="js/main.js"></script>
+</body></html>

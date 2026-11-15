@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Compound Calculator | LanreTrades</title>
+<meta name="description" content="See what steady monthly growth can compound into. A free illustration tool from LanreTrades.">
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+<header><div class="wrap"><nav>
+ <a class="logo" href="index.html">LANRE<b>TRADES</b></a>
+ <div class="links"><a href="index.html#join">Community</a><a href="index.html#workbook">Workbook</a><a class="on" href="calculator.html">Calculator</a><a href="risk.html">Risk</a><a class="btn b1 sm" href="index.html#join">Join Free</a></div>
+</nav></div></header>
+<div class="orb" style="left:55%;top:-60px;width:700px;height:600px;background:rgba(138,92,255,.35)"></div>
+<div class="orb" style="left:-200px;top:300px;width:600px;height:500px;background:rgba(247,200,90,.18)"></div>
+<main><section style="padding-top:60px"><div class="wrap">
+ <div class="kick">Free tool</div>
+ <h1 style="font-size:clamp(40px,6vw,76px)">See what <span class="serif neon">discipline</span><br>can compound into.</h1>
+ <p class="lead">Move the sliders and watch steady growth stack up over time. This is a math tool, not a promise. Markets are risky and your real months will vary.</p>
+ <div class="panel" id="calc">
+  <div class="box">
+   <div class="sl"><div class="top"><span>Starting balance</span><b id="o-bal"></b></div><input id="c-bal" type="range" min="100" max="50000" step="100" value="1000"></div>
+   <div class="sl"><div class="top"><span>Monthly return</span><b id="o-rate"></b></div><input id="c-rate" type="range" min="1" max="20" step="1" value="5"></div>
+   <div class="sl"><div class="top"><span>Time horizon</span><b id="o-mon"></b></div><input id="c-mon" type="range" min="1" max="60" step="1" value="12"></div>
+   <div class="sl"><div class="top"><span>Monthly deposit</span><b id="o-dep"></b></div><input id="c-dep" type="range" min="0" max="5000" step="50" value="0"></div>
+   <label class="tog"><input id="c-comp" type="checkbox" checked><span class="sw"></span>Reinvest profits (compound)</label>
+   <p class="note">Illustration only. Not financial advice. Consistent monthly returns are not guaranteed, and most traders do not earn a steady return every month. Trading involves risk of loss.</p>
+  </div>
+  <div class="box g">
+   <div class="lab" style="letter-spacing:5px">Projected balance</div>
+   <div class="big neon" id="proj">$0</div>
+   <div class="stats"><div>Profit<b id="pf">$0</b></div><div>Deposited<b id="dp">$0</b></div><div>Growth<b id="gr">0×</b></div></div>
+   <svg class="chart" viewBox="0 0 600 190" preserveAspectRatio="none" aria-label="Balance growth chart"><defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7C85A" stop-opacity=".35"/><stop offset="1" stop-color="#F7C85A" stop-opacity="0"/></linearGradient></defs><path id="area" fill="url(#ag)"/><polyline id="flat" fill="none" stroke="#8A5CFF" stroke-width="2" stroke-dasharray="6 6" opacity=".8"/><polyline id="line" fill="none" stroke="#F7C85A" stroke-width="3" style="filter:drop-shadow(0 0 8px #F7C85A)"/></svg>
+   <div class="legend"><span id="l1" style="color:var(--gold)"></span><span id="l2" style="color:#a58cff"></span></div>
+  </div>
+ </div>
+ <div style="margin-top:40px;display:flex;gap:16px;flex-wrap:wrap"><a class="btn b3" href="risk.html">Next: Risk Management →</a><a class="btn b1" href="index.html#join">Join the Community →</a></div>
+</div></section></main>
+<footer><div class="wrap"><a class="logo" href="index.html">LANRE<b>TRADES</b></a><div class="fs"><a data-social="instagram">Instagram</a><a data-social="tiktok">TikTok</a><a data-social="youtube">YouTube</a><a data-social="threads">Threads</a></div><div class="disc">Educational content only. Not financial advice. Trading involves risk of loss.</div></div></footer>
+<script src="js/config.js"></script><script src="js/main.js"></script>
+</body></html>
