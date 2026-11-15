@@ -13,6 +13,33 @@
     else { el.style.display = 'none'; }
   });
 
+  // Join popup: free community buttons open a two step popup (broker account, then community link).
+  var modal = document.createElement('div');
+  modal.className = 'modal'; modal.setAttribute('role', 'dialog'); modal.setAttribute('aria-modal', 'true'); modal.setAttribute('aria-labelledby', 'm-title'); modal.hidden = true;
+  modal.innerHTML =
+    '<div class="m-box"><button class="m-x" type="button" aria-label="Close">×</button>' +
+    '<div class="kick" style="margin-bottom:14px">Two quick steps</div>' +
+    '<h3 id="m-title">Get <span class="serif neon">started.</span></h3>' +
+    '<div class="m-step"><span class="m-n">1</span><div><b>Start your broker account</b><a class="btn b1" id="m-broker" target="_blank" rel="noopener">Start Your Broker Account →</a></div></div>' +
+    '<div class="m-step"><span class="m-n">2</span><div><b>Join my free community</b><a class="btn b2" id="m-join" target="_blank" rel="noopener">Join My Free Community →</a></div></div>' +
+    '<p class="note" style="margin-top:20px">Educational content only. Not financial advice. Trading involves risk of loss.</p></div>';
+  document.body.appendChild(modal);
+  var lastFocus = null;
+  var closeModal = function () { modal.hidden = true; document.body.style.overflow = ''; if (lastFocus) lastFocus.focus(); };
+  var openModal = function (from) {
+    lastFocus = from;
+    var b = document.getElementById('m-broker'), j = document.getElementById('m-join');
+    if (C.brokerUrl) { b.href = C.brokerUrl; b.classList.remove('off'); b.removeAttribute('aria-disabled'); }
+    else { b.removeAttribute('href'); b.classList.add('off'); b.setAttribute('aria-disabled', 'true'); }
+    j.href = C.freeCommunityUrl;
+    modal.hidden = false; document.body.style.overflow = 'hidden'; modal.querySelector('.m-x').focus();
+  };
+  modal.addEventListener('click', function (e) { if (e.target === modal || e.target.classList.contains('m-x')) closeModal(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
+  document.querySelectorAll('[data-link="freeCommunityUrl"]').forEach(function (el) {
+    el.addEventListener('click', function (e) { if (C.freeCommunityUrl) { e.preventDefault(); openModal(el); } });
+  });
+
   // Sign-up form: posts to the configured endpoint. It never pretends to succeed.
   var form = document.getElementById('signup-form');
   if (form) {
