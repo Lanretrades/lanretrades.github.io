@@ -34,6 +34,7 @@
     j.href = C.freeCommunityUrl;
     modal.hidden = false; document.body.style.overflow = 'hidden'; modal.querySelector('.m-x').focus();
   };
+  window.LT_openJoin = function () { if (C.freeCommunityUrl) openModal(document.activeElement); };
   modal.addEventListener('click', function (e) { if (e.target === modal || e.target.classList.contains('m-x')) closeModal(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
   document.querySelectorAll('[data-link="freeCommunityUrl"]').forEach(function (el) {
